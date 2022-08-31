@@ -31,7 +31,7 @@ Type=oneshot
 WorkingDirectory=${HOME}/homebrew/startup_animations
 # ExecStartPre=/bin/sleep 30
 ExecStart=${HOME}/homebrew/startup_animations/deckui_animations.sh
-" > "$HOME/.config/systemd/user/deckui_animations"
+" > "$HOME/.config/systemd/user/deckui_animations.service"
 systemctl --user daemon-reload
 systemctl --user enable --now deckui_animations.service
 
