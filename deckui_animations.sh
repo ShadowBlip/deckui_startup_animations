@@ -20,8 +20,6 @@ msg2() {
   echo -e "$Red!!$Color_Off ${@}$Color_Off"
 }
 
-echo $USER
-exit 0
 DECK_STARTUP_FILE="/${HOME}/.steam/steam/steamui/movies/deck_startup.webm"
 DECK_STARTUP_FILE_SIZE=1840847
 DECK_STARTUP_STOCK_MD5="4ee82f478313cf74010fc22501b40729"
