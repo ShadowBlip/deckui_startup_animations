@@ -18,7 +18,20 @@ fi
 
 # Install the service file
 echo ":: Installing the startup service"
-ln -sf "$HOME/homebrew/startup_animations/randomize_deck_startup.service" "$HOME/.config/systemd/user/randomize_deck_startup.service"
+
+echo "
+[Unit]
+Description=Randomize deck_startup.webm after boot
+
+[Install]
+WantedBy=default.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=${HOME}/homebrew/startup_animations
+# ExecStartPre=/bin/sleep 30
+ExecStart=${HOME}/homebrew/startup_animations/deckui_animations.sh
+" > "$HOME/.config/systemd/user/deckui_animations"
 systemctl --user daemon-reload
-systemctl --user enable --now randomize_deck_startup.service
+systemctl --user enable --now deckui_animations.service
 
